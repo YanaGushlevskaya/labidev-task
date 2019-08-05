@@ -1,0 +1,49 @@
+@include normalize();
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: $base-font;
+  @include font-size(15);
+}
+
+.content {
+  flex: 1 0;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+
+  @include medium {
+    margin: 20px 30px;
+  }
+
+  @include extra-large {
+    width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+  }
+}
+
+.reset-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reset-link {
+  text-decoration: none;
+}

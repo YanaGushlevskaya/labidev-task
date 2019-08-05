@@ -1,0 +1,17 @@
+.chosen-container-single .chosen-default span,
+.chosen-container .chosen-results {
+  color: $primary-text;
+}
+
+.chosen-container-single .chosen-default,
+.chosen-container-active .chosen-default {
+  background: $third;
+}
+
+.chosen-container {
+  @include font-size(14);
+}
+
+.chosen-container .chosen-results {
+  max-height: 100px;
+}

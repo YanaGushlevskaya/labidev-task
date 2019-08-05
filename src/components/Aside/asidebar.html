@@ -1,0 +1,83 @@
+<aside class="asidebar">
+  <div class="container container--aside">
+    <div class="asidebar__item">
+      <h4 class="asidebar__item-heading">Choose category</h4>
+      <select name="category" id="asidebar__category" class="chosen-select" data-placeholder="Best match">
+        <option value=""></option>
+        <option value="Software Development">Software Development</option>
+        <option value="Data Science">Data Science &#38; Analitics</option>
+        <option value="Design">Design &#38; Creative</option>
+        <option value="Sales">Sales &#38; Marketing</option>
+      </select>
+    </div>
+    <div class="asidebar__item">
+      <h4 class="asidebar__item-heading">Choose subcategory</h4>
+      <ul class="asidebar__list reset-list">
+        {% set categories = [ { id:"subcategory-1", name:"All subcategories", quantity:"" }, { id:"subcategory-2",
+        name:"Data entry", quantity:"(1306)" }, { id:"subcategory-3", name:"Personal Assistant", quantity:"(1907)" }, {
+        id:"subcategory-4", name:"Web Research", quantity:"(972)" }, { id:"subcategory-5", name:"Email Research
+        Handling", quantity:"(80)" }, { id:"subcategory-6", name:"Transcription", quantity:"(307)" }, {
+        id:"subcategory-7", name:"Other - Administrative support", quantity:"" } ] %} {% for category in categories %}
+        <li class="asidebar__list-item">
+          <input
+            type="checkbox"
+            name="subcategory-checkbox"
+            id="{{ category.id }}"
+            class="asidebar__input asidebar__input--checkbox"
+          />
+          <label for="{{ category.id }}" class="label--checkbox">
+            <span class="checkmark"></span>
+            <span class="label-title">{{ category.name }}</span>
+            <span class="label-subtitle"> {{ category.quantity }} </span>
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="asidebar__item">
+      <h4 class="asidebar__item-heading">Choose rating</h4>
+      <ul class="asidebar__list reset-list">
+        {% set ratings = [ { id:"rating-any", name:"Any stars", quantity:"" }, { id:"rating-5", name:"2 stars",
+        quantity:"(930)" }, { id:"rating-4.5", name:"4.5 stars and Up", quantity:"(2591)" }, { id:"rating-4", name:"4
+        stars and Up", quantity:"(1546)" } ] %} {% for rating in ratings %}
+        <li class="asidebar__list-item">
+          <input type="radio" name="rating-radio" id="{{ rating.id }}" class="asidebar__input asidebar__input--radio" />
+          <label for="{{ rating.id }}" class="label--radio">
+            <span class="checkmark checkmark--radio"></span>
+            <span class="label-title">{{ rating.name }} </span>
+            <span class="label-subtitle"> {{ rating.quantity }} </span>
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+      <input type="checkbox" id="rating-freelancers" class="asidebar__input asidebar__input--checkbox" />
+      <label for="rating-freelancers" class="label--checkbox">
+        <span class="checkmark checkmark--green"></span>
+        <span class="label-title">Include unrated freelancers</span>
+        <span class="label-subtitle">(1784)</span>
+      </label>
+    </div>
+    <div class="asidebar__item">
+      <h4 class="asidebar__item-heading">Budget</h4>
+      <select name="category" id="asidebar__budget" class="chosen-select" data-placeholder="Any budget">
+        <option value=""></option>
+        <option value="less than 300">&lt; 300</option>
+        <option value="300-1000">300 - 1000</option>
+        <option value="1000-5000">1000 - 5000</option>
+        <option value="more than 5000">&gt; 5000</option>
+      </select>
+    </div>
+    <div class="asidebar__item">
+      <h4 class="asidebar__item-heading">Delivery</h4>
+      <select name="category" id="asidebar__delivery" class="chosen-select" data-placeholder="Any">
+        <option value=""></option>
+        <option value="standard">Standard Delivery</option>
+        <option value="express">Express Delivery</option>
+      </select>
+    </div>
+    <div class="asidebar__item">
+      <h4 class="asidebar__item-heading">Location</h4>
+      {% include "components/Aside/asidebar_location.html" %}
+    </div>
+  </div>
+</aside>

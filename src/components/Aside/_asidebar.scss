@@ -1,0 +1,87 @@
+@import 'chosen-select.scss';
+
+.asidebar {
+  display: none;
+  @include medium {
+    display: block;
+    width: 30%;
+    background: $secondary;
+    @include font-size(14);
+    margin: 0 10px;
+  }
+}
+
+.container--aside {
+  padding: 20px 20px;
+}
+
+.asidebar__item-heading {
+  margin: 0 0 8px 0;
+}
+
+.asidebar__item:not(:last-child) {
+  margin: 0 0 20px 0;
+}
+
+.asidebar__list-item {
+  padding-bottom: 10px;
+}
+
+.asidebar__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.label--checkbox,
+.label--radio {
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  display: block;
+  min-width: 15px;
+  height: 15px;
+  border: 1px solid $secondary-text;
+  border-radius: 3px;
+  background: $third;
+  position: relative;
+}
+
+.checkmark--radio {
+  border-radius: 50%;
+}
+
+.asidebar__input--checkbox:checked + .label--checkbox .checkmark:before,
+.asidebar__input--radio:checked + .label--radio .checkmark--radio:before {
+  content: '\f00c';
+  position: absolute;
+  top: 0;
+  color: $primary;
+  @include font-size(13);
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+.asidebar__input--radio:checked + .label--radio .checkmark--radio:before {
+  content: '\f111';
+  @include font-size(8);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.asidebar__input--checkbox:checked + .label--checkbox .checkmark--green:before {
+  color: #7fa025;
+}
+
+.label-title {
+  padding: 0 10px 0 5px;
+}
+
+.label-subtitle {
+  font-weight: bold;
+}
