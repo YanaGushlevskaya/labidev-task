@@ -1,6 +1,10 @@
+Вёрстка макета:
+- cтилизация селектов - chosen select;
+- генерация текста на основе json;
+
 [DEMO](https://yanagushlevskaya.github.io/labidev-task/dist/)
 
-# Simple Boilerplate-starter
+## Simple Boilerplate-starter
 ## Installation
 ### Requirements
 - Node.js
